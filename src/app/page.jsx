@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import ColorPalette from "@/components/ColorPalette";
 export default function HomePage() {
   return (
     <section
@@ -12,8 +12,8 @@ export default function HomePage() {
         width={848}
         height={1207}
         alt=""
-        className="row-start-2 aspect-auto h-auto max-h-full min-h-min w-auto 
-		  self-end justify-self-center sm:row-start-auto"
+        className="row-start-2 aspect-auto h-auto max-h-full min-h-min w-auto
+          self-end justify-self-center sm:row-start-auto"
       />
       <div
         className="row-start-1 grid gap-4 self-center
@@ -25,13 +25,7 @@ export default function HomePage() {
           Frontend Developer with a passion for creating visually stunning and
           user-friendly websites and web-applications.
         </p>
-        <div className="flex gap-2">
-          <div className="h-8 w-8 border-2 border-black bg-[#273043]"></div>
-          <div className="h-8 w-8 border-2 border-black bg-[#9197AE]"></div>
-          <div className="h-8 w-8 border-2 border-black bg-[#EFF6EE]"></div>
-          <div className="h-8 w-8 border-2 border-black bg-[#F02D3A]"></div>
-          <div className="h-8 w-8 border-2 border-black bg-[#DD0426]"></div>
-        </div>
+        <ColorPalette />
       </div>
     </section>
   );

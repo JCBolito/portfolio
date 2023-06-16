@@ -18,7 +18,7 @@ function Navigation() {
                 className={`rounded p-2 font-bold transition-all duration-500
 				${
           pathname == route.path
-            ? "bg-[#DD0426] font-extrabold text-white"
+            ? "border-[#DD0426] bg-[#DD0426] font-extrabold text-white"
             : "border-2 border-transparent hover:border-[#DD0426] hover:text-[#DD0426] "
         }`}
               >
@@ -59,7 +59,7 @@ function NavigationMenu() {
 						transition-all duration-500
 						${
               pathname == route.path
-                ? "bg-[#DD0426] font-extrabold text-white"
+                ? "border-[#DD0426] bg-[#DD0426] font-extrabold text-white"
                 : "border-2 border-transparent hover:border-[#DD0426] hover:text-[#DD0426]"
             }`}
                 >
