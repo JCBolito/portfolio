@@ -19,10 +19,10 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className="m-auto min-h-screen max-w-screen-xl scroll-smooth bg-gradient-to-tr 
-		from-[#FFFFFF] to-[#7e8294] bg-no-repeat px-4 pt-2"
+		from-[#FFFFFF] to-[#7e8294] bg-no-repeat p-4"
       >
         <Header />
-        <main className="m-auto">{children}</main>
+        <main className="pt-8">{children}</main>
       </body>
     </html>
   );
