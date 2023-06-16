@@ -4,8 +4,8 @@ export default function HomePage() {
   return (
     <section
       id="home"
-      className="grid h-[calc(100vh-61.37px)] grid-rows-[1fr_auto] gap-4 overflow-hidden 
-		pt-8 sm:grid-cols-[auto_1fr] sm:grid-rows-1"
+      className="items grid h-screen max-h-[calc(100vh-53.5px)] grid-rows-[1fr_auto]
+    	gap-4 overflow-hidden pt-8 sm:grid-cols-[auto_1fr] sm:grid-rows-1"
     >
       <Image
         src={"/branding/portrait.png"}
@@ -20,7 +20,7 @@ export default function HomePage() {
 		sm:row-start-auto sm:self-center"
       >
         <h1 className="font-bold">Hello, World!</h1>
-        <h2 className="text-4xl font-extrabold">I&apos;m Joshua Bolito!</h2>
+        <h2 className="text-4xl font-extrabold">I&apos;m Joshua Caleb!</h2>
         <p className="text-xl">
           Frontend Developer with a passion for creating visually stunning and
           user-friendly websites and web-applications.
