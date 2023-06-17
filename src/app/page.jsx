@@ -4,16 +4,16 @@ export default function HomePage() {
   return (
     <section
       id="home"
-      className="items relative top-4 grid h-screen max-h-[calc(100vh-110px)] 
-	  grid-rows-[1fr_auto] gap-4 overflow-hidden sm:grid-cols-[auto_1fr] sm:grid-rows-1"
+      className="items top-4 grid h-screen max-h-[calc(100vh-142px)] 
+	  grid-rows-[1fr_auto] gap-4 sm:grid-cols-[auto_1fr] sm:grid-rows-1"
     >
       <Image
         src={"/branding/portrait.png"}
         width={848}
         height={1207}
         alt=""
-        className="row-start-2 aspect-auto h-auto max-h-full min-h-min w-auto
-          self-end justify-self-center sm:row-start-auto"
+        className="relative row-start-2 mb-[-2.05rem] aspect-auto h-auto max-h-full min-h-min
+          w-auto self-end justify-self-center sm:row-start-auto"
       />
       <div
         className="row-start-1 grid gap-4 self-center

@@ -15,11 +15,11 @@ function Navigation() {
               <Link
                 scroll={false}
                 href={route.path}
-                className={`rounded p-2 font-bold transition-all duration-500
+                className={`rounded border-2 p-2 font-bold transition-all duration-500
 				${
           pathname == route.path
             ? "border-[#DD0426] bg-[#DD0426] font-extrabold text-white"
-            : "border-2 border-transparent hover:border-[#DD0426] hover:text-[#DD0426] "
+            : "border-transparent hover:border-[#DD0426] hover:text-[#DD0426] "
         }`}
               >
                 {route.name}
@@ -32,17 +32,21 @@ function Navigation() {
   );
 }
 
-function NavigationMenu() {
+function NavigationMenu({ darkTheme }) {
   const pathname = usePathname();
   return (
-    <div className="relative block md:hidden">
-      <button className="peer transition-all focus:rotate-[45deg] peer-hover:rotate-[45deg]">
+    <div
+      className={`relative block md:hidden ${
+        darkTheme ? "text-black [&_img]:invert" : ""
+      }`}
+    >
+      <button className="peer grid items-center transition-all focus:rotate-[45deg] peer-hover:rotate-[45deg]">
         <Image
           src={"/menu.svg"}
           width={200}
           height={200}
           alt=""
-          className="w-8 contrast-75"
+          className={`w-8 contrast-75 `}
         />
       </button>
       <nav

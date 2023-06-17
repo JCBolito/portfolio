@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { themes } from "@/data/themes";
 import { Navigation, NavigationMenu } from "./Navigation";
-export default function Header() {
+export default function Header({ darkTheme, changeTheme }) {
   return (
-    <header className="">
+    <header className="relative z-50">
       <div className="m-auto flex items-center justify-between">
         <Link href="/">
           <Image
@@ -17,16 +18,18 @@ export default function Header() {
         </Link>
         <Navigation />
         <div className="flex items-center gap-4">
-          <button>
+          <button onClick={changeTheme}>
             <Image
-              src={"/theme/sun.svg"}
+              src={darkTheme ? themes.dark.img : themes.light.img}
               width={200}
               height={200}
               alt=""
-              className="w-8 contrast-75"
+              className={`w-8 transition-all duration-500 hover:scale-110 ${
+                darkTheme ? themes.dark.imgStyles : themes.light.imgStyles
+              }`}
             />
           </button>
-          <NavigationMenu />
+          <NavigationMenu darkTheme={darkTheme} />
         </div>
       </div>
     </header>
