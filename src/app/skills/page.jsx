@@ -23,6 +23,7 @@ export default function SkillsPage() {
             return (
               <div
                 key={index}
+                id="technologies"
                 className="relative grid items-center rounded bg-[rgba(39,48,67,0.15)]
 					  p-4 transition-all hover:[&>*]:saturate-100"
               >
