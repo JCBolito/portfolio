@@ -5,7 +5,7 @@ import { themes } from "@/data/themes";
 import { Navigation, NavigationMenu } from "./Navigation";
 export default function Header({ darkTheme, changeTheme }) {
   return (
-    <header className="relative z-50">
+    <header className="sticky top-4 z-50 rounded">
       <div className="m-auto flex items-center justify-between">
         <Link href="/">
           <Image
@@ -13,7 +13,7 @@ export default function Header({ darkTheme, changeTheme }) {
             width={706}
             height={501}
             alt=""
-            className="w-full max-w-[4rem]"
+            className="h-full max-h-8 w-auto"
           />
         </Link>
         <Navigation />

@@ -1,15 +1,15 @@
 const navigations = [
   {
     name: "Home",
-    path: "/",
+    path: "#home",
   },
   {
     name: "Skills",
-    path: "/skills",
+    path: "#skills",
   },
   {
     name: "Projects",
-    path: "/projects",
+    path: "#projects",
   },
   //   {
   //     name: "Résumé",
@@ -17,7 +17,7 @@ const navigations = [
   //   },
   {
     name: "Contact",
-    path: "/contact",
+    path: "#contact",
   },
 ];
 

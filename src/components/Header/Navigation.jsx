@@ -15,12 +15,8 @@ function Navigation() {
               <Link
                 scroll={false}
                 href={route.path}
-                className={`rounded border-2 p-2 font-bold transition-all duration-500
-				${
-          pathname == route.path
-            ? "border-[#DD0426] bg-[#DD0426] font-extrabold text-white"
-            : "border-transparent hover:border-[#DD0426] hover:text-[#DD0426] "
-        }`}
+                className="rounded border-2 border-transparent p-2 font-bold transition-all
+          		duration-500 hover:border-[#DD0426] hover:text-[#DD0426]"
               >
                 {route.name}
               </Link>
@@ -59,13 +55,8 @@ function NavigationMenu({ darkTheme }) {
               <li key={index} className="flex w-28">
                 <Link
                   href={route.path}
-                  className={`w-full rounded p-2 font-bold 
-						transition-all duration-500
-						${
-              pathname == route.path
-                ? "border-[#DD0426] bg-[#DD0426] font-extrabold text-white"
-                : "border-2 border-transparent hover:border-[#DD0426] hover:text-[#DD0426]"
-            }`}
+                  className="w-full rounded border-2 border-transparent p-2 font-bold transition-all 
+				  duration-500 hover:border-[#DD0426] hover:text-[#DD0426]"
                 >
                   {route.name}
                 </Link>

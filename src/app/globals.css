@@ -6,6 +6,9 @@
   html {
     scroll-behavior: smooth !important;
   }
+  section {
+    scroll-padding-top: 1rem !important;
+  }
 }
 /* :root {
   --foreground-rgb: 0, 0, 0;
