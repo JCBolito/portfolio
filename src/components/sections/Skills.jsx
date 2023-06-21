@@ -6,8 +6,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="items grid place-content-center 
-	  justify-items-center
+      className="items grid place-content-center justify-items-center
 	  gap-4 overflow-hidden"
     >
       <div className="grid max-w-lg gap-4 text-center">

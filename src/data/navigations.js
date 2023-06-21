@@ -11,10 +11,6 @@ const navigations = [
     name: "Projects",
     path: "#projects",
   },
-  //   {
-  //     name: "Résumé",
-  //     path: "/resume",
-  //   },
   {
     name: "Contact",
     path: "#contact",

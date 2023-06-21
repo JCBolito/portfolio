@@ -5,7 +5,7 @@ import { themes } from "@/data/themes";
 import { Navigation, NavigationMenu } from "./Navigation";
 export default function Header({ darkTheme, changeTheme }) {
   return (
-    <header className="sticky top-4 z-50 rounded">
+    <header className="sticky top-2 z-50 m-auto rounded">
       <div className="m-auto flex items-center justify-between">
         <Link href="/">
           <Image
@@ -23,7 +23,7 @@ export default function Header({ darkTheme, changeTheme }) {
               src={darkTheme ? themes.dark.img : themes.light.img}
               width={200}
               height={200}
-              alt=""
+              alt={darkTheme ? "Dark Mode" : "Light Mode"}
               className={`w-8 transition-all duration-500 hover:scale-110 ${
                 darkTheme ? themes.dark.imgStyles : themes.light.imgStyles
               }`}
