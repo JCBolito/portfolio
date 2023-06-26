@@ -9,7 +9,7 @@ export default function Contact() {
     >
       <h1 className="text-left text-4xl font-extrabold">Send me a message!</h1>
       <form
-        action="https://formsubmit.co/e442ab0fee6705957b9f7f1de70f47df"
+        action="https://formsubmit.co/bolitojoshuacaleb.professional@gmail.com"
         id="contact-form"
         className="grid w-full max-w-xl gap-4"
         method="POST"
