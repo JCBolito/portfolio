@@ -4,7 +4,7 @@ import { themes } from "@/data/themes";
 import { Nunito_Sans } from "next/font/google";
 import { navigationScroll } from "@/utils/navigationScroll";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import useDarkTheme from "@/hooks/useDarkTheme";
 import { useEffect } from "react";
 const nunitoSans = Nunito_Sans({
