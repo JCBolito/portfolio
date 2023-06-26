@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { themes } from "@/data/themes";
-import { Navigation, NavigationMenu } from "./Navigation";
+import { Navigation, NavigationMenu } from "./header/Navigation";
 export default function Header({ darkTheme, changeTheme }) {
   return (
     <header className="sticky top-2 z-50 m-auto rounded">
