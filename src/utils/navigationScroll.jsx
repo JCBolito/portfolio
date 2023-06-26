@@ -2,6 +2,7 @@
 function navigationScroll() {
   const sections = document.querySelectorAll("section");
   const navLink = document.querySelectorAll("header nav a");
+  console.log(navLink);
   window.onscroll = () => {
     sections.forEach((section) => {
       let top = window.scrollY;
@@ -9,26 +10,22 @@ function navigationScroll() {
       let height = section.offsetHeight;
       let id = section.getAttribute("id");
       if (top > offset && top < offset + height) {
-        console.log(id);
         const navigations = document.querySelectorAll(
           `header nav a[href*=${id}]`
         );
         navLink.forEach((links) => {
+          console.log(navigations[0]);
+          links.classList.add("hover:text-[#DD0426]");
           links.classList.remove(
             "border-[#DD0426]",
             "bg-[#DD0426]",
             "font-extrabold",
-            "text-white",
-            "hover:text-white"
+            "text-white"
           );
-          navigations[0].classList.add(
-            "border-[#DD0426]",
-            "bg-[#DD0426]",
-            "font-extrabold",
-            "text-white",
-            "hover:text-white"
-          );
-          navigations[1].classList.add(
+        });
+        navigations.forEach((navigation) => {
+          navigation.classList.remove("hover:text-[#DD0426]");
+          navigation.classList.add(
             "border-[#DD0426]",
             "bg-[#DD0426]",
             "font-extrabold",
