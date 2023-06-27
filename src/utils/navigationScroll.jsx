@@ -2,7 +2,6 @@
 function navigationScroll() {
   const sections = document.querySelectorAll("section");
   const navLink = document.querySelectorAll("header nav a");
-  console.log(navLink);
   window.onscroll = () => {
     sections.forEach((section) => {
       let top = window.scrollY;
@@ -14,7 +13,6 @@ function navigationScroll() {
           `header nav a[href*=${id}]`
         );
         navLink.forEach((links) => {
-          console.log(navigations[0]);
           links.classList.add("hover:text-[#DD0426]");
           links.classList.remove(
             "border-[#DD0426]",

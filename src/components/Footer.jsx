@@ -14,9 +14,7 @@ export default function Footer() {
 			transition-all hover:border-[#DD0426] hover:text-[#DD0426]"
               key={index}
             >
-              <Link href={link.path} target="_blank">
-                {link.name}
-              </Link>
+              <Link href={link.path}>{link.name}</Link>
             </li>
           );
         })}
@@ -25,7 +23,7 @@ export default function Footer() {
         <ul className="flex gap-4">
           {contacts.map((contact, index) => {
             return (
-              <Link href={contact.url} key={index}>
+              <Link href={contact.url} key={index} passHref>
                 <Image
                   src={contact.image}
                   alt={contact.name}

@@ -7,7 +7,7 @@ export default function Header({ darkTheme, changeTheme }) {
   return (
     <header className="sticky top-2 z-50 m-auto rounded">
       <div className="m-auto flex items-center justify-between">
-        <Link href="/">
+        <Link href="/" passHref>
           <Image
             src={"/branding/logo.png"}
             width={706}

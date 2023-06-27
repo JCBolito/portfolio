@@ -40,6 +40,7 @@ export default function RootLayout({ children }) {
         darkTheme
           ? `[&_#contact-form_input]:border-white [&_#contact-form_textarea]:border-white 
 			  	[&_#home-contact_img]:invert
+				[&_#projects_#project]:bg-[#9197AE30]
 				[&_#technologies_img]:drop-shadow-[0px_2px_3px_rgba(250,250,250,0.25)]`
           : ""
       }`}

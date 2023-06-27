@@ -17,12 +17,11 @@ export default function Home() {
       >
         <Image
           src={"/branding/portrait.png"}
-          width={1160}
-          height={1355}
+          width={202}
+          height={288}
           alt=""
           className="relative aspect-auto h-full min-h-min
             w-full max-w-min object-contain"
-          //   className="object-contain"
         />
       </div>
       <article className="grid max-w-sm gap-6 sm:row-start-auto sm:self-center">
@@ -37,10 +36,11 @@ export default function Home() {
         <ColorPalette />
         <div className="grid gap-3">
           <Link
-            href={"/resume/jcb-resume.pdf"}
+            href={"/resume/Resume.pdf"}
             target="_blank"
             className="flex w-fit items-center gap-2 rounded bg-[#F02D3A] p-2 
 		  font-extrabold text-white transition-all hover:bg-[#DD0426]"
+            passHref
           >
             <Image
               src={"/resume/document-icon.png"}
@@ -58,7 +58,7 @@ export default function Home() {
             {contacts.map((contact, index) => {
               return (
                 <li key={index}>
-                  <Link href={contact.url} target="_blank">
+                  <Link href={contact.url} target="_blank" passHref>
                     <Image
                       src={contact.image}
                       alt={contact.name}
