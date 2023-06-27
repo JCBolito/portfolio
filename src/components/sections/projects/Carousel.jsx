@@ -18,8 +18,8 @@ export default function Carousel({ imageDirectory, images }) {
             <button
               key={index}
               onClick={() => setImageState(index)}
-              className={`h-4 w-4 rounded-full border-2 border-white transition-all ${
-                imageState == index ? "bg-white" : ""
+              className={`h-4 w-4 rounded-full border-2 border-[#F02D3A] opacity-90 transition-all ${
+                imageState == index ? "bg-[#F02D3A]" : ""
               }`}
             ></button>
           );

@@ -20,39 +20,25 @@ export default function Projects() {
       </div>
       <div className="flex flex-wrap justify-center gap-4">
         {projects.map((project, index) => {
-          return (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              technologies={project.technologies}
-              imageDirectory={project.imageDirectory}
-              images={project.images}
-              description={project.description}
-              links={project.links}
-            />
-          );
+          return <ProjectCard key={index} project={project} />;
         })}
       </div>
     </section>
   );
 }
 
-function ProjectCard({
-  title,
-  technologies,
-  imageDirectory,
-  images,
-  description,
-  links,
-}) {
+function ProjectCard({ project }) {
   return (
     <article
-      className="max-w-md overflow-hidden rounded-lg bg-[#ffffff1a] shadow-md"
+      className="grid max-w-md overflow-hidden rounded-lg bg-[#ffffff1a] shadow-md"
       id="project"
     >
-      <Carousel imageDirectory={imageDirectory} images={images} />
+      <Carousel
+        imageDirectory={project.imageDirectory}
+        images={project.images}
+      />
       <div className="m-4 flex flex-wrap justify-center justify-items-center gap-1">
-        {technologies.map((technology, index) => {
+        {project.technologies.map((technology, index) => {
           return (
             <Badge
               key={index}
@@ -64,11 +50,14 @@ function ProjectCard({
         })}
       </div>
       <div className="grid gap-4 px-4 py-2">
-        <h1 className="text-center font-extrabold">{title}</h1>
-        <p className="text-justify">{description}</p>
+        <div>
+          <h1 className="text-center font-extrabold">{project.title}</h1>
+          <h2 className="text-center text-xs uppercase">{project.date}</h2>
+        </div>
+        <p className="text-justify">{project.description}</p>
       </div>
       <div className="my-4 mb-6 flex justify-center gap-2">
-        {links.map((link, index) => {
+        {project.links.map((link, index) => {
           return (
             <Link
               key={index}
@@ -83,7 +72,7 @@ function ProjectCard({
                 alt={link.alt}
                 width={256}
                 height={256}
-                className="w-6 invert"
+                className="w-6 brightness-0 invert"
               />
             </Link>
           );

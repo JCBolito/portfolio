@@ -6,12 +6,11 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="grid h-screen max-h-[calc(100vh-120px)] max-w-screen-md  
-	  content-center items-center justify-items-center gap-8
-	  sm:grid-cols-[1fr_2fr]"
+      className="flex h-screen max-h-[calc(100vh-120px)] flex-col items-center 
+	  justify-center gap-8 sm:flex-row"
     >
       <div
-        className="flex aspect-square h-full max-h-72
+        className="flex aspect-square h-fit max-h-72
 		min-h-min justify-center overflow-clip rounded-full 
 		bg-gradient-to-b from-[#F02D3A] to-black"
       >
@@ -30,7 +29,7 @@ export default function Home() {
           <h2 className="text-3xl font-extrabold">I&apos;m Joshua Caleb!</h2>
           <p className="text-lg">
             Frontend Developer with a passion for creating visually stunning and
-            user-friendly websites and web-applications.
+            user-friendly websites and web applications.
           </p>
         </div>
         <ColorPalette />
