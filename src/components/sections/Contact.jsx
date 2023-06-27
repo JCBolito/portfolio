@@ -1,5 +1,4 @@
-import { contacts } from "@/data/contacts";
-import Link from "next/link";
+import ColorPalette from "../ColorPalette";
 import Image from "next/image";
 export default function Contact() {
   return (
@@ -7,7 +6,8 @@ export default function Contact() {
       id="contact"
       className="grid content-center justify-items-center gap-4"
     >
-      <h1 className="text-left text-4xl font-extrabold">Send me a message!</h1>
+      <h1 className="text-left text-4xl font-extrabold">Contact me!</h1>
+      <ColorPalette />
       <form
         action="https://formsubmit.co/bolitojoshuacaleb.professional@gmail.com"
         id="contact-form"
