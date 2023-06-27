@@ -13,17 +13,19 @@ export default function Carousel({ imageDirectory, images }) {
         className="w-full"
       />
       <div className="absolute bottom-2 mx-auto flex w-full justify-center gap-1">
-        {images.map((image, index) => {
-          return (
-            <button
-              key={index}
-              onClick={() => setImageState(index)}
-              className={`h-4 w-4 rounded-full border-2 border-[#F02D3A] opacity-90 transition-all ${
-                imageState == index ? "bg-[#F02D3A]" : ""
-              }`}
-            ></button>
-          );
-        })}
+        {images.length > 1
+          ? images.map((image, index) => {
+              return (
+                <button
+                  key={index}
+                  onClick={() => setImageState(index)}
+                  className={`h-4 w-4 rounded-full border-2 border-[#F02D3A] opacity-90 transition-all ${
+                    imageState == index ? "bg-[#F02D3A]" : ""
+                  }`}
+                ></button>
+              );
+            })
+          : ""}
       </div>
     </div>
   );
