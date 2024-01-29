@@ -1,5 +1,6 @@
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/atoms/theme-provider";
+import Navbar from "@/components/molecules/navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar className="p-4" />
           {children}
         </ThemeProvider>
       </body>

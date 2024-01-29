@@ -1,11 +1,11 @@
-import { ModeToggle } from "@/components/mode-toggle";
-import Image from "next/image";
+import ProfileCard from "@/components/organisms/profile-card";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 ">
-      <Image src="/logo.png" alt="" width={706} height={501} className="w-12" />
-      <ModeToggle />
+    <main className="m-auto grid min-h-screen max-w-screen-2xl sm:grid-cols-2">
+      <section className="p-4">
+        <ProfileCard className="dark:bg-gray-900" />
+      </section>
     </main>
   );
 }
