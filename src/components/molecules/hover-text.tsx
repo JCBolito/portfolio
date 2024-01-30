@@ -16,7 +16,7 @@ export function HoverText({ title, description, imageSrc }: T_HoverText) {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <Button variant="link" className="p-0 text-base font-bold">
+        <Button variant="link" className="h-min p-0 text-base font-bold">
           {title}
         </Button>
       </HoverCardTrigger>

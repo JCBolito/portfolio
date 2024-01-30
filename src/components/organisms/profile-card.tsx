@@ -22,7 +22,7 @@ export default function ProfileCard({ className }: T_ProfileCard) {
     <Card className={className}>
       <CardHeader className="grid justify-center text-center">
         <Avatar className="aspect-square h-full max-h-60 w-full max-w-60">
-          <AvatarImage src="/profile-image.jpgg" />
+          <AvatarImage src="/profile-image.jpg" />
           <AvatarFallback>
             <Skeleton className="h-full w-full" />
           </AvatarFallback>
