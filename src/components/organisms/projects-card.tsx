@@ -20,7 +20,7 @@ export default function ProjectsCard({ className }: T_ProjectsCard) {
           Some of the projects I developed throughout the years.
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex flex-wrap justify-center gap-2">
+      <CardContent className="">
         <ProjectsCarousel />
       </CardContent>
     </Card>

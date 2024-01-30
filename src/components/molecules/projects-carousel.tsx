@@ -21,24 +21,23 @@ export default function ProjectsCarousel() {
   );
   return (
     <Carousel
-      opts={{ loop: true }}
-      plugins={[plugin.current]}
-      className="h-full w-full"
+      opts={{ loop: true, align: "start" }}
+      //   plugins={[plugin.current]}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
         {projects.map((project, index) => (
-          <CarouselItem key={index}>
-            <Card className="grid grid-cols-2 overflow-hidden">
+          <CarouselItem key={index} className="grid sm:basis-1/2">
+            <Card className="">
               <Image
                 src={project.imageDirectory + project.image}
                 alt={project.title}
                 width={2504}
                 height={1318}
               />
-              <CardContent className="flex flex-col justify-evenly gap-2 p-2">
-                <CardTitle className="grid gap-1">
+              <CardContent className="grid gap-2 p-2">
+                <CardTitle className="">
                   <section className="flex items-center justify-between">
                     <span>{project.title}</span>
                     <ProjectDropdown

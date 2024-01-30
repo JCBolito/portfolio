@@ -14,7 +14,7 @@ export default function Home() {
         </section>
         <section className="flex flex-col justify-stretch gap-4 md:flex-[2_2_0%]">
           <SkillsCard className="flex flex-col justify-center dark:bg-gray-900" />
-          <ProjectsCard className="flex flex-1 flex-col justify-center dark:bg-gray-900" />
+          <ProjectsCard className="grid justify-center dark:bg-gray-900" />
         </section>
       </section>
       {/* <section className="p-4">
