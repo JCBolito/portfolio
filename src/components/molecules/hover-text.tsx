@@ -20,7 +20,7 @@ export function HoverText({ title, description, imageSrc }: T_HoverText) {
           {title}
         </Button>
       </HoverCardTrigger>
-      <HoverCardContent className="w-80">
+      <HoverCardContent className="m-2 w-[80%] max-w-80">
         <div className="flex justify-between space-x-4">
           <Avatar>
             <AvatarImage src={imageSrc} />

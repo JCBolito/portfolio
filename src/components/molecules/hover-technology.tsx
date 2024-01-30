@@ -1,5 +1,4 @@
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
-import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import {
   HoverCard,
@@ -8,7 +7,6 @@ import {
 } from "../ui/hover-card";
 import { Skeleton } from "../ui/skeleton";
 import { T_TechStack } from "@/data/tech-stack";
-import { cn } from "@/lib/utils";
 
 export default function HoverTechnology({
   title,
@@ -25,14 +23,14 @@ export default function HoverTechnology({
         >
           <Avatar className="aspect-square h-6 w-6 rounded-none">
             <AvatarImage src={imageSrc} />
-            <AvatarFallback>
+            <AvatarFallback className="aspect-square h-6 w-6 rounded-none">
               <Skeleton className="h-full w-full" />
             </AvatarFallback>
           </Avatar>
           {title}
         </Button>
       </HoverCardTrigger>
-      <HoverCardContent className="w-80">
+      <HoverCardContent className="m-2 w-[80%] max-w-80 sm:w-full">
         <div className="flex justify-between space-x-4">
           <Avatar>
             <AvatarImage src={imageSrc} />
