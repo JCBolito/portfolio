@@ -2,9 +2,7 @@
 
 import ProjectDropdown from "../atoms/project-dropdown";
 import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
 import { Card, CardContent, CardDescription, CardTitle } from "../ui/card";
-import { Separator } from "../ui/separator";
 import {
   Carousel,
   CarouselContent,
@@ -22,7 +20,7 @@ export default function ProjectsCarousel() {
   return (
     <Carousel
       opts={{ loop: true, align: "start" }}
-      //   plugins={[plugin.current]}
+      plugins={[plugin.current]}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
