@@ -1,6 +1,7 @@
 import { HoverText } from "../molecules/hover-text";
 import { IconTooltip } from "../molecules/icon-tooltip";
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
+import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
@@ -11,7 +12,9 @@ import {
 } from "../ui/card";
 import { Separator } from "../ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Linkedin, Github } from "lucide-react";
+import { Linkedin, Github, Mail } from "lucide-react";
+import { FileText } from "lucide-react";
+import Link from "next/link";
 
 type T_ProfileCard = {
   className?: string;
@@ -32,9 +35,17 @@ export default function ProfileCard({ className }: T_ProfileCard) {
         </CardTitle>
         <CardDescription className="italic">Frontend Developer</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="py-0">
+        <h1 className="mb-2 text-xl font-bold">Hello, world!</h1>
         <p className="text-justify">
-          Frontend Developer with expertise in utilizing{" "}
+          I'm{" "}
+          <HoverText
+            title={"Joshua"}
+            description={`An excellent Frontend Developer with a good track record of 
+			working with a team. Hire him pls.`}
+            imageSrc={"/profile-image.jpg"}
+          />
+          ! A Frontend Developer with expertise in utilizing{" "}
           <HoverText
             title={"React"}
             description={`A free and open-source front-end JavaScript library maintained by Meta 
@@ -52,20 +63,35 @@ export default function ProfileCard({ className }: T_ProfileCard) {
           websites and web applications.
         </p>
       </CardContent>
-      <Separator className="m-auto mb-4 w-40" />
-      <CardFooter className="flex justify-center gap-2">
-        <IconTooltip
-          text="LinkedIn"
-          icon={<Linkedin color="#FFFFFF" />}
-          href="https://bit.ly/jcblinkedin"
-          className="bg-blue-700 hover:bg-blue-600"
-        />
-        <IconTooltip
-          text="Github"
-          icon={<Github />}
-          href="https://bit.ly/jcbgithub"
-          className="bg-gray-900 dark:bg-white"
-        />
+      <CardFooter className="grid">
+        <Separator className="m-auto my-4 w-40" />
+        <section className="flex justify-center gap-2">
+          <IconTooltip
+            text="LinkedIn"
+            icon={<Linkedin color="#FFFFFF" />}
+            href="https://bit.ly/jcblinkedin"
+            className="bg-blue-700 hover:bg-blue-600"
+          />
+          <IconTooltip
+            text="Github"
+            icon={<Github />}
+            href="https://bit.ly/jcbgithub"
+            className="bg-gray-900 dark:bg-white"
+          />
+          <IconTooltip
+            text="Send Email"
+            icon={<Mail color="#FFFFFF" />}
+            href="mailto: bolitojoshuacaleb.professional@gmail.com"
+            className="bg-red-600 hover:bg-red-500"
+          />
+        </section>
+        <Separator className="m-auto my-4 w-40" />
+        <Link href={"/Resume.pdf"} target="_blank" className="m-auto">
+          <Button variant="outline">
+            <FileText size={18} className="mr-2" />
+            View Résumé
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );

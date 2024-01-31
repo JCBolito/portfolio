@@ -18,13 +18,13 @@ export default function HoverTechnology({
       <HoverCardTrigger asChild>
         <Button
           className="flex items-center gap-1 bg-gray-200 font-bold 
-		text-black hover:bg-gray-300 dark:bg-gray-700 dark:text-white
-		dark:hover:bg-gray-600"
+		  text-black hover:bg-gray-300 dark:bg-gray-700
+			dark:text-white dark:hover:bg-gray-600"
         >
           <Avatar className="aspect-square h-6 w-6 rounded-none">
             <AvatarImage src={imageSrc} />
-            <AvatarFallback className="aspect-square h-6 w-6 rounded-none">
-              <Skeleton className="h-full w-full" />
+            <AvatarFallback className="aspect-square h-6 w-6 rounded">
+              <Skeleton className="h-full w-full rounded" />
             </AvatarFallback>
           </Avatar>
           {title}

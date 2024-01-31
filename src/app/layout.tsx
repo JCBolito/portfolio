@@ -1,10 +1,15 @@
 import "./globals.css";
 import { ThemeProvider } from "@/components/atoms/theme-provider";
 import Navbar from "@/components/molecules/navbar";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Roboto({
+  subsets: ["cyrillic"],
+  weight: ["100", "300", "400", "500"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,15 +23,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={cn(
+          font.className,
+          `min-h-screen bg-gradient-to-br from-gray-50 to-gray-300
+		  dark:from-gray-600 dark:to-gray-800 sm:grid sm:content-center sm:items-center`,
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar className="p-4" />
-          {children}
+          <nav>
+            <Navbar className="m-auto flex max-w-screen-xl items-center justify-between p-4" />
+          </nav>
+          <main className="m-auto flex h-full max-w-screen-xl flex-col justify-start gap-4">
+            {children}
+          </main>
+          <Separator className="m-auto my-4 max-w-32 bg-black opacity-10 dark:opacity-30 sm:max-w-sm" />
+          <footer className="mb-4 text-center">
+            <span className="text-sm opacity-70">
+              Joshua Caleb Bolito © {new Date().getFullYear()}
+            </span>
+          </footer>
         </ThemeProvider>
       </body>
     </html>

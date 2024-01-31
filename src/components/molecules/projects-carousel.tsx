@@ -15,7 +15,7 @@ import React from "react";
 
 export default function ProjectsCarousel() {
   const plugin = React.useRef(
-    Autoplay({ delay: 1500, stopOnInteraction: false }),
+    Autoplay({ delay: 1500, stopOnInteraction: true }),
   );
   return (
     <Carousel
@@ -24,10 +24,10 @@ export default function ProjectsCarousel() {
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
-      <CarouselContent>
+      <CarouselContent className="flex">
         {projects.map((project, index) => (
-          <CarouselItem key={index} className="sm:basis-1/2">
-            <Card className="overflow-hidden">
+          <CarouselItem key={index} className="flex sm:basis-1/2">
+            <Card className="grid items-stretch overflow-hidden">
               <Image
                 src={project.imageDirectory + project.image}
                 alt={project.title}

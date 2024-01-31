@@ -8,17 +8,9 @@ type T_Navbar = {
 
 export default function Navbar({ className }: T_Navbar) {
   return (
-    <nav className={cn(className)}>
-      <div className="m-auto flex max-w-screen-xl items-center justify-between">
-        <Image
-          src="/logo.png"
-          alt=""
-          width={706}
-          height={501}
-          className="w-12"
-        />
-        <ModeToggle />
-      </div>
-    </nav>
+    <div className={cn(className)}>
+      <Image src="/logo.png" alt="" width={706} height={501} className="w-12" />
+      <ModeToggle />
+    </div>
   );
 }
