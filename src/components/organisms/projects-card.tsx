@@ -20,7 +20,7 @@ export default function ProjectsCard({ className }: T_ProjectsCard) {
           Some of the projects I developed throughout the years.
         </CardDescription>
       </CardHeader>
-      <CardContent className="">
+      <CardContent className="p-1">
         <ProjectsCarousel />
       </CardContent>
     </Card>

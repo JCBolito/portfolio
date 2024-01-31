@@ -26,8 +26,8 @@ export default function ProjectsCarousel() {
     >
       <CarouselContent>
         {projects.map((project, index) => (
-          <CarouselItem key={index} className="grid sm:basis-1/2">
-            <Card className="">
+          <CarouselItem key={index} className="sm:basis-1/2">
+            <Card className="overflow-hidden">
               <Image
                 src={project.imageDirectory + project.image}
                 alt={project.title}

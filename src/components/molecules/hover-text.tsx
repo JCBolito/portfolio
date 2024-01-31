@@ -5,18 +5,28 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "../ui/hover-card";
+import { cn } from "@/lib/utils";
 
 type T_HoverText = {
   title: string;
   description: string;
   imageSrc: string;
+  className?: string;
 };
 
-export function HoverText({ title, description, imageSrc }: T_HoverText) {
+export function HoverText({
+  title,
+  description,
+  imageSrc,
+  className,
+}: T_HoverText) {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <Button variant="link" className="h-min p-0 text-base font-bold">
+        <Button
+          variant="link"
+          className={cn("h-min p-0 text-base font-bold", className)}
+        >
           {title}
         </Button>
       </HoverCardTrigger>
