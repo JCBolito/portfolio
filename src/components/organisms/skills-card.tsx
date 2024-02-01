@@ -6,13 +6,14 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { techStack } from "@/data/tech-stack";
+import { getTechStack } from "@/lib/utils";
 
 type T_SkillsCard = {
   className?: string;
 };
 
-export default function SkillsCard({ className }: T_SkillsCard) {
+export default async function SkillsCard({ className }: T_SkillsCard) {
+  const techStack = await getTechStack();
   return (
     <Card className={className}>
       <CardHeader className="grid justify-center text-center">
@@ -25,8 +26,8 @@ export default function SkillsCard({ className }: T_SkillsCard) {
         {techStack.map((data, index) => (
           <HoverTechnology
             key={index}
-            title={data.title}
-            imageSrc={data.imageSrc}
+            title={data.technology}
+            imageSrc={data.logo.fields.file.url}
             description={data.description}
           />
         ))}
