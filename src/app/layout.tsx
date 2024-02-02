@@ -43,6 +43,7 @@ export default function RootLayout({
 		  dark:from-gray-600 dark:to-gray-800 sm:grid sm:content-center sm:items-center`,
         )}
       >
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
