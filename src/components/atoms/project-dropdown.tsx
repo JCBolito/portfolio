@@ -25,7 +25,7 @@ export default function ProjectDropdown({
         className={cn(!website && !repository && "hidden")}
         asChild
       >
-        <Button variant="ghost" size="icon" className="h-auto p-0">
+        <Button variant="secondary" size="icon" className="h-auto p-0">
           <MoreHorizontal />
           <span className="sr-only">Toggle theme</span>
         </Button>

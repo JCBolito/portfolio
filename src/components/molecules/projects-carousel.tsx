@@ -23,7 +23,7 @@ export default function ProjectsCarousel({ projects }: T_ProjectsCarousel) {
   const plugin = useRef(Autoplay({ delay: 1500, stopOnInteraction: true }));
   return (
     <Carousel
-      opts={{ loop: true, align: "start" }}
+      opts={{ loop: false, align: "end" }}
       plugins={[plugin.current]}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
@@ -32,15 +32,18 @@ export default function ProjectsCarousel({ projects }: T_ProjectsCarousel) {
         {projects.map((project, index) => (
           <CarouselItem key={index} className="flex sm:basis-1/2">
             <Card className="grid items-stretch overflow-hidden">
-              <Suspense fallback={<Skeleton />}>
-                <Image
-                  src={`https:${project.image.fields.file.url}`}
-                  alt={project.title}
-                  width={2504}
-                  height={1318}
-                  loading="lazy"
-                />
-              </Suspense>
+              <div className="h-fit w-full overflow-hidden">
+                <Suspense fallback={<Skeleton />}>
+                  <Image
+                    src={`https:${project.image.fields.file.url}`}
+                    alt={project.title}
+                    width={2504}
+                    height={1318}
+                    loading="lazy"
+                    className="duration-1000 ease-in-out hover:scale-150 active:scale-150"
+                  />
+                </Suspense>
+              </div>
               <CardContent className="grid gap-2 p-2">
                 <CardTitle className="">
                   <section className="flex items-center justify-between">
