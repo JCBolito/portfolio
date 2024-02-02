@@ -11,6 +11,18 @@ export type T_ModelData = {
   description: string;
 };
 
+export type T_Profile = {
+  image: T_ContentfulFile;
+  name: string;
+  role: string;
+  introduction: string;
+  information: string;
+  linkedin: string;
+  github: string;
+  email: string;
+  resume: T_ContentfulFile;
+};
+
 export type T_Stack = {
   technology: string;
   logo: T_ContentfulFile;

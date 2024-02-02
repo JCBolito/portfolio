@@ -1,4 +1,9 @@
-import { T_Stack, T_Projects, T_ModelData } from "@/types/contentful-types";
+import {
+  T_Stack,
+  T_Projects,
+  T_ModelData,
+  T_Profile,
+} from "@/types/contentful-types";
 import { createClient } from "contentful";
 
 export const client = createClient({
@@ -6,6 +11,22 @@ export const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "world",
 });
 
+export async function getProfile(): Promise<T_Profile> {
+  const item = await client.getEntry("5f46lOqzpOpz0EMdQm1Mx4");
+  const profile = {
+    image: item.fields.image,
+    name: item.fields.name,
+    role: item.fields.role,
+    introduction: item.fields.introduction,
+    information: item.fields.information,
+    linkedin: item.fields.linkedin,
+    github: item.fields.github,
+    email: item.fields.email,
+    resume: item.fields.resume,
+  };
+  console.log(profile.resume);
+  return profile as T_Profile;
+}
 export async function getTechStack(): Promise<[T_ModelData, T_Stack]> {
   const { name, description } = await client.getContentType("stack");
   const { items } = await client.getEntries({
