@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cf-export": "contentful space export --config contentful/export-config.json --management-token CFPAT-yKHHYqg0iYLdmkHVhnaiF1LAkQCMOs25a9iDJUjxi5g --space-id dgo3cebd9t92",
+    "cf-generate-types": "cf-content-types-generator contentful/export.json --out src/types/contentful"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -19,6 +21,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "cf-content-types-generator": "^2.14.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "contentful": "^10.6.21",
@@ -39,6 +42,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "contentful-cli": "^3.1.41",
     "postcss": "^8",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",

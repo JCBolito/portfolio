@@ -6,12 +6,14 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import { getProjects } from "@/lib/utils";
 
 type T_ProjectsCard = {
   className?: string;
 };
 
-export default function ProjectsCard({ className }: T_ProjectsCard) {
+export default async function ProjectsCard({ className }: T_ProjectsCard) {
+  const projects = await getProjects();
   return (
     <Card className={className}>
       <CardHeader className="grid justify-center text-center">
@@ -21,7 +23,7 @@ export default function ProjectsCard({ className }: T_ProjectsCard) {
         </CardDescription>
       </CardHeader>
       <CardContent className="px-2">
-        <ProjectsCarousel />
+        <ProjectsCarousel projects={projects} />
       </CardContent>
     </Card>
   );
