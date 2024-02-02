@@ -6,13 +6,18 @@ import {
   HoverCardTrigger,
 } from "../ui/hover-card";
 import { Skeleton } from "../ui/skeleton";
-import { T_TechStack } from "@/data/tech-stack";
+
+type T_HoverTechnology = {
+  title: string;
+  imageSrc: string;
+  description: string;
+};
 
 export default function HoverTechnology({
   title,
   imageSrc,
   description,
-}: T_TechStack) {
+}: T_HoverTechnology) {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>

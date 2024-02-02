@@ -24,7 +24,6 @@ export async function getProfile(): Promise<T_Profile> {
     email: item.fields.email,
     resume: item.fields.resume,
   };
-  console.log(profile.resume);
   return profile as T_Profile;
 }
 export async function getTechStack(): Promise<[T_ModelData, T_Stack]> {
