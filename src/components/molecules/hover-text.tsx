@@ -33,7 +33,7 @@ export function HoverText({
       <HoverCardContent className="m-2 w-[80%] max-w-80">
         <div className="flex justify-between space-x-4">
           <Avatar>
-            <AvatarImage src={imageSrc} />
+            <AvatarImage src={imageSrc} alt={title} />
             <AvatarFallback>{title[0]}</AvatarFallback>
           </Avatar>
           <div className="space-y-1">

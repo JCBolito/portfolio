@@ -27,7 +27,10 @@ export default async function ProfileCard({ className }: T_ProfileCard) {
     <Card className={className}>
       <CardHeader className="grid justify-center text-center">
         <Avatar className="aspect-square h-full max-h-60 w-full max-w-60">
-          <AvatarImage src={profile.image.fields.file.url} />
+          <AvatarImage
+            src={profile.image.fields.file.url}
+            alt="Profile Picture"
+          />
           <AvatarFallback>
             <Skeleton className="h-60 w-60" />
           </AvatarFallback>

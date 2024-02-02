@@ -27,7 +27,7 @@ export default function HoverTechnology({
 			dark:text-white dark:hover:bg-gray-600"
         >
           <Avatar className="aspect-square h-6 w-6 rounded-none">
-            <AvatarImage src={imageSrc} />
+            <AvatarImage src={imageSrc} alt={title} />
             <AvatarFallback className="aspect-square h-6 w-6 rounded">
               <Skeleton className="h-full w-full rounded" />
             </AvatarFallback>
@@ -38,7 +38,7 @@ export default function HoverTechnology({
       <HoverCardContent className="m-2 w-[80%] max-w-80 sm:w-full">
         <div className="flex justify-between space-x-4">
           <Avatar>
-            <AvatarImage src={imageSrc} />
+            <AvatarImage src={imageSrc} alt={title} />
             <AvatarFallback>{title[0]}</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
