@@ -9,20 +9,18 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { formatDate } from "@/lib/utils";
 import { T_Projects } from "@/types/contentful-types";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import React from "react";
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 
 type T_ProjectsCarousel = {
   projects: T_Projects;
 };
 
 export default function ProjectsCarousel({ projects }: T_ProjectsCarousel) {
-  const plugin = React.useRef(
-    Autoplay({ delay: 1500, stopOnInteraction: true }),
-  );
+  const plugin = useRef(Autoplay({ delay: 1500, stopOnInteraction: true }));
   return (
     <Carousel
       opts={{ loop: true, align: "start" }}
@@ -53,7 +51,8 @@ export default function ProjectsCarousel({ projects }: T_ProjectsCarousel) {
                     />
                   </section>
                   <span className="text-sm opacity-70">
-                    {`${project.startDate}`} – {`${project.dateCompleted}`}
+                    {formatDate(project.startDate)} –{" "}
+                    {formatDate(project.dateCompleted)}
                   </span>
                 </CardTitle>
                 <section className="flex flex-wrap gap-1">

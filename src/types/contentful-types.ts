@@ -1,11 +1,14 @@
-import { EntryFieldTypes, EntrySkeletonType } from "contentful";
-
 type T_ContentfulFile = {
   fields: {
     file: {
       url: string;
     };
   };
+};
+
+export type T_ModelData = {
+  name: string;
+  description: string;
 };
 
 export type T_Stack = {

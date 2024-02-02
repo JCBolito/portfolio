@@ -6,21 +6,19 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { getTechStack } from "@/lib/utils";
+import { getTechStack } from "@/lib/contentful";
 
 type T_SkillsCard = {
   className?: string;
 };
 
 export default async function SkillsCard({ className }: T_SkillsCard) {
-  const techStack = await getTechStack();
+  const [modelData, techStack] = await getTechStack();
   return (
     <Card className={className}>
       <CardHeader className="grid justify-center text-center">
-        <CardTitle className="text-xl sm:text-2xl">Technologies</CardTitle>
-        <CardDescription>
-          I use the following technologies to develop most of my projects.
-        </CardDescription>
+        <CardTitle className="text-xl sm:text-2xl">{modelData.name}</CardTitle>
+        <CardDescription>{modelData.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-wrap justify-center gap-2">
         {techStack.map((data, index) => (
