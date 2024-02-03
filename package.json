@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "cf-export": "contentful space export --config contentful/export-config.json --management-token CFPAT-yKHHYqg0iYLdmkHVhnaiF1LAkQCMOs25a9iDJUjxi5g --space-id dgo3cebd9t92",
-    "cf-generate-types": "cf-content-types-generator contentful/export.json --out src/types/contentful"
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
