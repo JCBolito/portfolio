@@ -39,8 +39,8 @@ export default function RootLayout({
       <body
         className={cn(
           font.className,
-          `min-h-screen bg-gradient-to-br from-gray-50 to-gray-300
-		  dark:from-gray-600 dark:to-gray-800 sm:grid sm:content-center sm:items-center`,
+          `min-h-screen bg-gradient-to-br from-gray-50 to-gray-300 dark:from-gray-600 
+		  dark:to-gray-800 sm:flex sm:flex-col sm:justify-center`,
         )}
       >
         <Analytics />
@@ -51,12 +51,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <nav>
-            <Navbar className="m-auto flex max-w-screen-xl items-center justify-between p-4" />
+            <Navbar className="mx-auto flex max-w-screen-xl items-center justify-between p-4" />
           </nav>
-          <main className="m-auto flex h-full max-w-screen-xl flex-col justify-start gap-4">
+          <main className="mx-auto flex h-full max-w-screen-xl flex-col justify-start gap-4">
             {children}
           </main>
-          <Separator className="m-auto my-4 max-w-32 bg-black opacity-10 dark:opacity-30 sm:max-w-sm" />
+          <Separator className="mx-auto my-4 max-w-32 bg-black opacity-10 dark:opacity-30 sm:max-w-sm" />
           <footer className="mb-4 text-center">
             <span className="text-sm opacity-70">
               Joshua Caleb Bolito © {new Date().getFullYear()}

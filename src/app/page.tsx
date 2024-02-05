@@ -8,7 +8,7 @@ export default async function Home() {
       <section className="flex md:flex-[1_0_25%]">
         <ProfileCard className="grid content-stretch dark:bg-gray-900" />
       </section>
-      <section className="flex flex-col justify-stretch gap-4 md:flex-[2_2_75%]">
+      <section className="flex flex-col justify-stretch gap-4 lg:flex-[2_2_75%]">
         <SkillsCard className="flex flex-col justify-center dark:bg-gray-900" />
         <ProjectsCard className="dark:bg-gray-900" />
       </section>
