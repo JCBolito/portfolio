@@ -18,12 +18,12 @@ export default function Error({
   return (
     <section
       className="flex h-[calc(100vh-(68.44px+50px+32px))] flex-col 
-	items-center justify-center gap-8 sm:h-[825.47px]"
+	items-center justify-center gap-8 p-4 sm:h-[825.47px]"
     >
       <div className="flex max-w-xs items-center">
         <h1 className="text-2xl font-bold ">500</h1>
-        <span className="ml-4 border-l border-black pl-4 dark:border-white ">
-          Something went wrong with the server!
+        <span className="ml-4 border-l border-black pl-4 text-justify dark:border-white">
+          Oh no! Something went wrong with the server!
         </span>
       </div>
       <Button
@@ -33,7 +33,7 @@ export default function Error({
       >
         <RefreshCcw
           scale={18}
-          className="duration-500 ease-in-out group-hover:rotate-180"
+          className="duration-500 ease-in-out group-hover:rotate-180 group-focus:rotate-180"
         />
         Try again
       </Button>
