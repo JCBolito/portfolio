@@ -27,7 +27,7 @@ export async function getProfile(): Promise<T_Profile> {
   return profile as T_Profile;
 }
 export async function getTechStack(): Promise<[T_ModelData, T_Stack]> {
-  const { name, description } = await client.getContentType("stacks");
+  const { name, description } = await client.getContentType("stack");
   const { items } = await client.getEntries({
     content_type: "stack",
     order: ["sys.createdAt"],
