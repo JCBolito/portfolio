@@ -3,7 +3,6 @@ import { ThemeProvider } from "@/components/atoms/theme-provider";
 import Navbar from "@/components/molecules/navbar";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
@@ -43,7 +42,6 @@ export default function RootLayout({
 		  dark:to-gray-800 sm:flex sm:flex-col sm:justify-center`,
         )}
       >
-        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
