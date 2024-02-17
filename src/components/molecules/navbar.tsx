@@ -14,8 +14,8 @@ export default function Navbar({ className }: T_Navbar) {
         <Image
           src="/logo.png"
           alt="Home"
-          width={706}
-          height={501}
+          width={48}
+          height={37}
           className="w-12"
         />
       </Link>

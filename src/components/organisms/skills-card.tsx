@@ -1,11 +1,5 @@
 import HoverTechnology from "../molecules/hover-technology";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import { Card, CardContent, CardDescription, CardHeader } from "../ui/card";
 import { getTechStack } from "@/lib/contentful";
 
 type T_SkillsCard = {
@@ -17,7 +11,7 @@ export default async function SkillsCard({ className }: T_SkillsCard) {
   return (
     <Card className={className}>
       <CardHeader className="grid justify-center text-center">
-        <CardTitle className="text-xl sm:text-2xl">{modelData.name}</CardTitle>
+        <h2 className="text-xl font-bold sm:text-2xl">{modelData.name}</h2>
         <CardDescription>{modelData.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-wrap justify-center gap-2">

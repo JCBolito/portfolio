@@ -39,13 +39,13 @@ export default function ProjectsCarousel({ projects }: T_ProjectsCarousel) {
                     alt={project.title}
                     width={2504}
                     height={1318}
-                    loading="lazy"
+                    loading="eager"
                     className="duration-1000 ease-in-out hover:scale-150 active:scale-150"
                   />
                 </Suspense>
               </div>
               <CardContent className="grid gap-2 p-2">
-                <CardTitle className="">
+                <CardTitle>
                   <section className="flex items-center justify-between">
                     <span>{project.title}</span>
                     <ProjectDropdown

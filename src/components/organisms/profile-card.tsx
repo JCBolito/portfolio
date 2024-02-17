@@ -30,12 +30,15 @@ export default async function ProfileCard({ className }: T_ProfileCard) {
           <AvatarImage
             src={profile.image.fields.file.url}
             alt="Profile Picture"
+            width={160}
+            height={160}
+            loading="eager"
           />
           <AvatarFallback>
             <Skeleton className="h-60 w-60" />
           </AvatarFallback>
         </Avatar>
-        <CardTitle className="text-xl sm:text-2xl">{profile.name}</CardTitle>
+        <h1 className="text-xl font-bold sm:text-2xl">{profile.name}</h1>
         <CardDescription className="italic">{profile.role}</CardDescription>
       </CardHeader>
       <CardContent className="py-0">

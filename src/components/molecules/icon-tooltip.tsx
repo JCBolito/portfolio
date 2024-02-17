@@ -20,7 +20,11 @@ export function IconTooltip({ icon, text, className, href }: T_IconTooltip) {
       <Tooltip>
         <TooltipTrigger asChild>
           <Link href={href} target="_blank">
-            <Button variant="default" className={cn(className, "p-2")}>
+            <Button
+              variant="default"
+              className={cn(className, "p-2")}
+              aria-label={text}
+            >
               {icon}
             </Button>
           </Link>

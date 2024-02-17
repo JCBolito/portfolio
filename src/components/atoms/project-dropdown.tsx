@@ -27,7 +27,7 @@ export default function ProjectDropdown({
       >
         <Button variant="secondary" size="icon" className="h-auto p-0">
           <MoreHorizontal />
-          <span className="sr-only">Toggle theme</span>
+          <span className="sr-only">Visit Project</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
