@@ -55,7 +55,7 @@ export default function RootLayout({
           <nav>
             <Navbar className="mx-auto flex max-w-screen-xl items-center justify-between p-4" />
           </nav>
-          <main className="mx-auto flex h-full max-w-screen-xl flex-col justify-start gap-4">
+          <main className="flex h-full max-w-screen-xl flex-col gap-4 md:mx-auto">
             {children}
           </main>
           <Separator className="mx-auto my-4 max-w-32 bg-black opacity-10 dark:opacity-30 sm:max-w-sm" />
