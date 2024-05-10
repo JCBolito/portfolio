@@ -32,14 +32,14 @@ export default function ProjectsCarousel({ projects }: T_ProjectsCarousel) {
         {projects.map((project, index) => (
           <CarouselItem key={index} className="grid sm:basis-1/2">
             <Card className="grid items-stretch overflow-hidden">
-              <div className="h-fit w-auto overflow-hidden">
+              <div className="aspect-video h-full w-auto overflow-hidden">
                 <Image
                   src={`https:${project.image.fields.file.url}`}
                   alt={project.title}
                   width={2504}
                   height={1318}
                   loading="eager"
-                  className="duration-1000 ease-in-out hover:scale-150 active:scale-150"
+                  className="aspect-auto min-h-full duration-1000 ease-in-out hover:scale-150 active:scale-150"
                 />
               </div>
               <CardContent className="grid gap-2 p-2">
