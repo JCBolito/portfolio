@@ -1,3 +1,4 @@
+import ColoredSeparator from "../atoms/colored-separator";
 import { IconTooltip } from "../molecules/icon-tooltip";
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
 import { Button } from "../ui/button";
@@ -7,7 +8,6 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "../ui/card";
 import { Separator } from "../ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -25,7 +25,7 @@ export default async function ProfileCard({ className }: T_ProfileCard) {
   const profile = await getProfile();
   return (
     <Card className={className}>
-      <CardHeader className="grid justify-center text-center">
+      <CardHeader className="grid content-start justify-center pb-0 text-center">
         <Avatar className="aspect-square h-full max-h-60 w-full max-w-60">
           <AvatarImage
             src={profile.image.fields.file.url}
@@ -41,6 +41,7 @@ export default async function ProfileCard({ className }: T_ProfileCard) {
         <h1 className="text-xl font-bold sm:text-2xl">{profile.name}</h1>
         <CardDescription className="italic">{profile.role}</CardDescription>
       </CardHeader>
+      <ColoredSeparator className="my-6 lg:my-0" />
       <CardContent className="py-0">
         <h1 className="mb-2 text-xl font-bold">{profile.introduction}</h1>
         <Markdown remarkPlugins={[remarkGfm]} className="text-justify">

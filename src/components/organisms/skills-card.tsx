@@ -1,3 +1,4 @@
+import ColoredSeparator from "../atoms/colored-separator";
 import HoverTechnology from "../molecules/hover-technology";
 import { Card, CardContent, CardDescription, CardHeader } from "../ui/card";
 import { getTechStack } from "@/lib/contentful";
@@ -10,10 +11,11 @@ export default async function SkillsCard({ className }: T_SkillsCard) {
   const [modelData, techStack] = await getTechStack();
   return (
     <Card className={className}>
-      <CardHeader className="grid justify-center text-center">
+      <CardHeader className="grid justify-center pb-0 text-center">
         <h2 className="text-xl font-bold sm:text-2xl">{modelData.name}</h2>
         <CardDescription>{modelData.description}</CardDescription>
       </CardHeader>
+      <ColoredSeparator className="my-6 lg:my-3" />
       <CardContent className="flex flex-wrap justify-center gap-2">
         {techStack.map((data, index) => (
           <HoverTechnology
