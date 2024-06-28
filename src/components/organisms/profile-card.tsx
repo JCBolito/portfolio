@@ -30,9 +30,10 @@ export default async function ProfileCard({ className }: T_ProfileCard) {
           <AvatarImage
             src={profile.image.fields.file.url}
             alt="Profile Picture"
-            width={160}
-            height={160}
+            width={3840}
+            height={5760}
             loading="eager"
+            className="object-cover object-[0_-18px]"
           />
           <AvatarFallback>
             <Skeleton className="h-60 w-60" />
