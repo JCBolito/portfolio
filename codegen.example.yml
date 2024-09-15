@@ -1,0 +1,11 @@
+overwrite: true
+schema: "https://graphql.contentful.com/content/v1/spaces/{SPACE_ID}"
+documents: "src/lib/*.ts"
+generates:
+  src/types/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+    config:
+      skipTypename: false
+      withHooks: true
