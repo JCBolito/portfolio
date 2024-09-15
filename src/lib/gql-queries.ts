@@ -3,7 +3,9 @@ import { getClient, query, PreloadQuery } from "@/utils/ApolloClient";
 import { gql } from "@apollo/client";
 
 export async function getProfile() {
-  const { data } = await getClient().query<Profile>({
+  const {
+    data: { profile },
+  } = await getClient().query<{ profile: Profile }>({
     query: gql`
       query GetProfile {
         profile(id: "5f46lOqzpOpz0EMdQm1Mx4") {
@@ -24,5 +26,5 @@ export async function getProfile() {
       }
     `,
   });
-  return data;
+  return profile;
 }
