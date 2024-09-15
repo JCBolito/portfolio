@@ -39,7 +39,7 @@ export async function getTechnologies() {
   } = await getClient().query<{ stackCollection: StackCollection }>({
     query: gql`
       query GetTechnologies {
-        stackCollection {
+        stackCollection(order: [sys_publishedAt_ASC]) {
           items {
             logo {
               url
@@ -60,7 +60,7 @@ export async function getProjects() {
   } = await getClient().query<{ projectsCollection: ProjectsCollection }>({
     query: gql`
       query GetProjects {
-        projectsCollection {
+        projectsCollection(order: [startDate_DESC, dateCompleted_DESC]) {
           items {
             image {
               url
