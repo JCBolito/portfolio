@@ -3,19 +3,16 @@
 import ProjectDropdown from "../atoms/project-dropdown";
 import { Badge } from "../ui/badge";
 import { Card, CardContent, CardDescription, CardTitle } from "../ui/card";
-import { Skeleton } from "../ui/skeleton";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
 import { formatDate } from "@/lib/utils";
-import { T_Projects } from "@/types/contentful-types";
-import { ProjectsCollection } from "@/types/generated/graphql";
 import { Projects, Maybe } from "@/types/generated/graphql";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import { Suspense, useRef } from "react";
+import { useRef } from "react";
 
 type T_ProjectsCarousel = {
   projects: Maybe<Projects>[];
