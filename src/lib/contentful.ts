@@ -26,19 +26,11 @@ export async function getProfile(): Promise<T_Profile> {
   };
   return profile as T_Profile;
 }
-export async function getTechStack(): Promise<[T_ModelData, T_Stack]> {
-  const { name, description } = await client.getContentType("stack");
-  const { items } = await client.getEntries({
-    content_type: "stack",
-    order: ["sys.createdAt"],
-  });
-  const modelData = { name: name, description: description };
-  const techStack = items.map((item) => ({
-    technology: item.fields.technology,
-    logo: item.fields.logo,
-    description: item.fields.description,
-  }));
-  return [modelData, techStack as T_Stack];
+
+export async function getModelData(model: string): Promise<T_ModelData> {
+  const { name, description } = await client.getContentType(model);
+  const modelData = { name, description };
+  return modelData;
 }
 
 export async function getProjects(): Promise<[T_ModelData, T_Projects]> {
