@@ -1,8 +1,11 @@
 import ProfileCard from "@/components/organisms/profile-card";
 import ProjectsCard from "@/components/organisms/projects-card";
 import SkillsCard from "@/components/organisms/skills-card";
+import { getProfile } from "@/lib/gql-queries";
 
 export default async function Home() {
+  const data = await getProfile();
+  console.log(data);
   return (
     <section className="flex flex-col gap-4 p-4 lg:flex-row">
       <section className="flex md:flex-[1_0_25%]">
