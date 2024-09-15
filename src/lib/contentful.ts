@@ -11,22 +11,6 @@ export const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "world",
 });
 
-export async function getProfile(): Promise<T_Profile> {
-  const item = await client.getEntry("5f46lOqzpOpz0EMdQm1Mx4");
-  const profile = {
-    image: item.fields.image,
-    name: item.fields.name,
-    role: item.fields.role,
-    introduction: item.fields.introduction,
-    information: item.fields.information,
-    linkedin: item.fields.linkedin,
-    github: item.fields.github,
-    email: item.fields.email,
-    resume: item.fields.resume,
-  };
-  return profile as T_Profile;
-}
-
 export async function getModelData(model: string): Promise<T_ModelData> {
   const { name, description } = await client.getContentType(model);
   const modelData = { name, description };

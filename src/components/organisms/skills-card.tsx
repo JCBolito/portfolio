@@ -11,7 +11,6 @@ type T_SkillsCard = {
 export default async function SkillsCard({ className }: T_SkillsCard) {
   const modelData = await getModelData("stack");
   const techStack = await getTechnologies();
-  console.log(techStack);
   return (
     <Card className={className}>
       <CardHeader className="grid justify-center pb-0 text-center">

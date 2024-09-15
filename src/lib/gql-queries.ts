@@ -1,4 +1,8 @@
-import { Profile, StackCollection } from "@/types/generated/graphql";
+import {
+  Profile,
+  ProjectsCollection,
+  StackCollection,
+} from "@/types/generated/graphql";
 import { getClient, query, PreloadQuery } from "@/utils/ApolloClient";
 import { gql } from "@apollo/client";
 
@@ -48,4 +52,30 @@ export async function getTechnologies() {
     `,
   });
   return stackCollection.items;
+}
+
+export async function getProjects() {
+  const {
+    data: { projectsCollection },
+  } = await getClient().query<{ projectsCollection: ProjectsCollection }>({
+    query: gql`
+      query GetProjects {
+        projectsCollection {
+          items {
+            image {
+              url
+            }
+            title
+            urlWebsite
+            urlRepository
+            startDate
+            dateCompleted
+            technologies
+            description
+          }
+        }
+      }
+    `,
+  });
+  return projectsCollection.items;
 }

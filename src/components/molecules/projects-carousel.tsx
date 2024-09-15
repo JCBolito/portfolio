@@ -11,12 +11,14 @@ import {
 } from "@/components/ui/carousel";
 import { formatDate } from "@/lib/utils";
 import { T_Projects } from "@/types/contentful-types";
+import { ProjectsCollection } from "@/types/generated/graphql";
+import { Projects, Maybe } from "@/types/generated/graphql";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { Suspense, useRef } from "react";
 
 type T_ProjectsCarousel = {
-  projects: T_Projects;
+  projects: Maybe<Projects>[];
 };
 
 export default function ProjectsCarousel({ projects }: T_ProjectsCarousel) {
@@ -29,43 +31,45 @@ export default function ProjectsCarousel({ projects }: T_ProjectsCarousel) {
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
-        {projects.map((project, index) => (
-          <CarouselItem key={index} className="grid sm:basis-1/2">
-            <Card className="flex flex-col overflow-hidden">
-              <div className="aspect-video overflow-hidden">
-                <Image
-                  src={`https:${project.image.fields.file.url}`}
-                  alt={project.title}
-                  width={2504}
-                  height={1318}
-                  loading="eager"
-                  className="min-h-full w-auto duration-1000 ease-in-out hover:scale-150 active:scale-150"
-                />
-              </div>
-              <CardContent className="grid gap-2 p-2">
-                <CardTitle>
-                  <section className="flex items-center justify-between">
-                    <span>{project.title}</span>
-                    <ProjectDropdown
-                      website={project.urlWebsite}
-                      repository={project.urlRepository}
-                    />
+        {projects.map((project, index) => {
+          return (
+            <CarouselItem key={index} className="grid sm:basis-1/2">
+              <Card className="flex flex-col overflow-hidden">
+                <div className="aspect-video overflow-hidden">
+                  <Image
+                    src={project?.image?.url as string}
+                    alt={project?.title as string}
+                    width={2504}
+                    height={1318}
+                    loading="eager"
+                    className="min-h-full w-auto duration-1000 ease-in-out hover:scale-150 active:scale-150"
+                  />
+                </div>
+                <CardContent className="grid gap-2 p-2">
+                  <CardTitle>
+                    <section className="flex items-center justify-between">
+                      <span>{project?.title}</span>
+                      <ProjectDropdown
+                        website={project?.urlWebsite as string}
+                        repository={project?.urlRepository as string}
+                      />
+                    </section>
+                    <span className="text-sm opacity-70">
+                      {formatDate(project?.startDate)} –{" "}
+                      {formatDate(project?.dateCompleted)}
+                    </span>
+                  </CardTitle>
+                  <section className="flex flex-wrap gap-1">
+                    {project?.technologies?.map((technology, index) => (
+                      <Badge key={index}>{technology}</Badge>
+                    ))}
                   </section>
-                  <span className="text-sm opacity-70">
-                    {formatDate(project.startDate)} –{" "}
-                    {formatDate(project.dateCompleted)}
-                  </span>
-                </CardTitle>
-                <section className="flex flex-wrap gap-1">
-                  {project.technologies.map((technology, index) => (
-                    <Badge key={index}>{technology}</Badge>
-                  ))}
-                </section>
-                <CardDescription>{project.description}</CardDescription>
-              </CardContent>
-            </Card>
-          </CarouselItem>
-        ))}
+                  <CardDescription>{project?.description}</CardDescription>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+          );
+        })}
       </CarouselContent>
     </Carousel>
   );
