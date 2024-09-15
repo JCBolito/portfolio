@@ -984,3 +984,13 @@ export type GetProfileQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetProfileQuery = { __typename?: 'Query', profile?: { __typename?: 'Profile', name?: string | null, role?: string | null, introduction?: string | null, information?: string | null, linkedin?: string | null, github?: string | null, email?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, resume?: { __typename?: 'Asset', url?: string | null } | null } | null };
+
+export type GetTechnologiesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetTechnologiesQuery = { __typename?: 'Query', stackCollection?: { __typename?: 'StackCollection', items: Array<{ __typename?: 'Stack', technology?: string | null, description?: string | null, logo?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
+
+export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetProjectsQuery = { __typename?: 'Query', projectsCollection?: { __typename?: 'ProjectsCollection', items: Array<{ __typename?: 'Projects', title?: string | null, urlWebsite?: string | null, urlRepository?: string | null, startDate?: any | null, dateCompleted?: any | null, technologies?: Array<string | null> | null, description?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
