@@ -11,7 +11,7 @@ import {
 } from "../ui/card";
 import { Separator } from "../ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
-import { getProfile } from "@/lib/contentful";
+import { getProfile } from "@/lib/gql-queries";
 import { Linkedin, Github, Mail, FileText } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -28,7 +28,7 @@ export default async function ProfileCard({ className }: T_ProfileCard) {
       <CardHeader className="grid content-start justify-center pb-0 text-center">
         <Avatar className="aspect-square h-full max-h-60 w-full max-w-60">
           <AvatarImage
-            src={profile.image.fields.file.url}
+            src={profile.image?.url as string}
             alt="Profile Picture"
             width={3840}
             height={5760}
@@ -55,13 +55,13 @@ export default async function ProfileCard({ className }: T_ProfileCard) {
           <IconTooltip
             text="LinkedIn"
             icon={<Linkedin color="#FFFFFF" />}
-            href={profile.linkedin}
+            href={profile.linkedin as string}
             className="bg-blue-700 hover:bg-blue-600"
           />
           <IconTooltip
             text="Github"
             icon={<Github />}
-            href={profile.github}
+            href={profile.github as string}
             className="bg-gray-900 dark:bg-white"
           />
           <IconTooltip
@@ -73,7 +73,7 @@ export default async function ProfileCard({ className }: T_ProfileCard) {
         </section>
         <Separator className="m-auto my-4 w-40" />
         <Link
-          href={`https:${profile.resume.fields.file.url}`}
+          href={`${profile.resume?.url}`}
           target="_blank"
           className="m-auto"
           rel="noopener noreferrer"

@@ -1,14 +1,16 @@
 import ColoredSeparator from "../atoms/colored-separator";
 import ProjectsCarousel from "../molecules/projects-carousel";
 import { Card, CardContent, CardDescription, CardHeader } from "../ui/card";
-import { getProjects } from "@/lib/contentful";
+import { getModelData } from "@/lib/contentful";
+import { getProjects } from "@/lib/gql-queries";
 
 type T_ProjectsCard = {
   className?: string;
 };
 
 export default async function ProjectsCard({ className }: T_ProjectsCard) {
-  const [modelData, projects] = await getProjects();
+  const modelData = await getModelData("projects");
+  const projects = await getProjects();
   return (
     <Card className={className}>
       <CardHeader className="grid justify-center pb-0 text-center">
